@@ -1,0 +1,91 @@
+// https://dbdiagram.io/d/Taxi-6722d70e2c337ee119f40e7c
+
+// Таблица СТО
+Table Service_Station {
+  id integer [primary key, increment]
+  name varchar(100) [not null, unique]
+  address varchar(255) [not null, unique]
+  repair_id integer [unique, ref: - Repair.id]
+}
+
+// Таблица ремонтов
+Table Repair {
+  id integer [primary key, increment]
+  car_id integer [not null, ref: > Car.id]
+  repair_date datetime [not null]
+  description text
+  cost decimal(10,2) [not null]
+}
+
+// Таблица машин
+Table Car {
+  id integer [primary key, increment]
+  model varchar(100) [not null]
+  year integer [not null]
+  license_plate varchar(20) [not null, unique]
+  status varchar(50) [not null]
+}
+
+// Таблица водителей
+Table Driver {
+  id integer [primary key, increment]
+  name varchar(100) [not null]
+  phone varchar(20) [not null, unique]
+  license_number varchar(50) [not null, unique]
+  car_id integer [unique, ref: > Car.id]
+}
+
+// Таблица отзывов
+Table Review {
+  id integer [primary key, increment]
+  order_id integer [not null, unique, ref: - Order.id]
+  rating integer [not null]
+  comment text
+  created_at datetime [not null]
+}
+
+// Таблица заказов
+Table Order {
+  id integer [primary key, increment]
+  driver_id integer [not null, ref: > Driver.id]
+  client_id integer [not null, ref: > Client.id]
+  dispatcher_id integer [not null, ref: > Dispatcher.id]
+  tariff_id integer [not null, ref: > Tariff.id]
+  price_coefficient_id integer [not null, ref: > Price_Coefficient.id]
+  pickup_location varchar(255) [not null]
+  dropoff_location varchar(255) [not null]
+  order_time datetime [not null]
+  status varchar(50) [not null]
+}
+
+// Таблица диспетчеров
+Table Dispatcher {
+  id integer [primary key, increment]
+  name varchar(100) [not null]
+  phone varchar(20) [not null, unique]
+}
+
+// Таблица клиентов
+Table Client {
+  id integer [primary key, increment]
+  name varchar(100) [not null]
+  phone varchar(20) [not null, unique]
+  email varchar(100) [unique]
+}
+
+// Таблица тарифов
+Table Tariff {
+  id integer [primary key, increment]
+  name varchar(100) [not null, unique]
+  base_price decimal(10,2) [not null]
+  price_per_km decimal(10,2) [not null]
+}
+
+// Таблица ценовых коэффициентов
+Table Price_Coefficient {
+  id integer [primary key, increment]
+  name varchar(100) [not null, unique]
+  coefficient decimal(10,2) [not null]
+  condition text
+}
+
