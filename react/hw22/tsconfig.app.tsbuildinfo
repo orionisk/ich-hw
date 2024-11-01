@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/store.ts","./src/svg.d.ts","./src/vite-env.d.ts","./src/components/Quote.tsx","./src/components/ui/button.tsx","./src/components/ui/card.tsx","./src/components/ui/skeleton.tsx","./src/features/quote/quoteSlice.ts","./src/lib/utils.ts"],"version":"5.6.3"}
