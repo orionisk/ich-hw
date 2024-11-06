@@ -3,7 +3,7 @@ use('ich');
 db.customers.find({ ContactName: 'Sven Ottlieb' }, { City: 1, _id: 0 });
 
 //* 2. Из коллекции ich.US_Adult_Income найти возраст самого взрослого человека
-db.US_Adult_Income.find({}, { age: 1, _id: 0 }).sort({ age: -1 }).limit(1);
+db.US_Adult_Income.findOne({}, { age: 1, _id: 0 }, { sort: { age: -1 } });
 
 //* 3. Из 2 задачи выясните, сколько человек имеют такой же возраст
 db.US_Adult_Income.countDocuments({ age: 90 });
