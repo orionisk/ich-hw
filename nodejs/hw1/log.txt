@@ -1,0 +1,5 @@
+2024-11-26T20:57:02.518Z: Application started
+2024-11-26T20:57:02.519Z: This is a test message
+2024-11-26T20:57:02.519Z: User logged in
+2024-11-26T20:57:02.519Z: Some error occurred
+2024-11-26T20:57:02.519Z: Application ended

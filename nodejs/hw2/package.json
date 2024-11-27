@@ -1,0 +1,10 @@
+{
+  "name": "hw2",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "chat_app.js",
+  "scripts": {
+    "start": "node chat_app.js"
+  }
+}
