@@ -1,0 +1,8 @@
+Created Security Group: sg-0cb683b9ffdecc321
+True
+SECURITYGROUPRULES	0.0.0.0/0	MySQL	3306	sg-0cb683b9ffdecc321	183631304314	tcp	False	arn:aws:ec2:eu-north-1:183631304314:security-group-rule/sgr-0cdc4993018d96795	sgr-0cdc4993018d96795	3306
+True
+SECURITYGROUPRULES	0.0.0.0/0	HTTPS	443	sg-0cb683b9ffdecc321	183631304314	tcp	False	arn:aws:ec2:eu-north-1:183631304314:security-group-rule/sgr-0a0f1d7a299fecbec	sgr-0a0f1d7a299fecbec	443
+True
+SECURITYGROUPRULES	123.123.123.123/32	SSH My IP	22	sg-0cb683b9ffdecc321	183631304314	tcp	False	arn:aws:ec2:eu-north-1:183631304314:security-group-rule/sgr-04dd75b11691df478	sgr-04dd75b11691df478	22
+Security group sg-0cb683b9ffdecc321 has been deleted
