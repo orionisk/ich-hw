@@ -9,8 +9,13 @@ import {
 console.log(calculateTotal(100, 2, 0.1));
 console.log(calculateTotal(50, 3));
 
-console.log(displayId('abc123'));
-console.log(displayId(42));
+let id: string | number;
+
+id = 'abc';
+console.log(displayId(id));
+
+id = 123;
+console.log(displayId(id));
 
 const orders: Order[] = [
   { orderId: '1', amount: 100, status: 'pending' },
